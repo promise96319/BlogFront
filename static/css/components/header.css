@@ -1,0 +1,35 @@
+.header {
+  background-color: rgba(3, 3, 3, 0);
+  padding: 0 .8rem;
+  overflow: hidden;
+  line-height: 3.2rem;
+  height: 3.2rem;
+  color: #fff;
+  /* border-bottom: 1px solid #eee; */
+}
+
+.header.scrolled {
+  background-color: rgba(3, 3, 3, 0.8);
+}
+
+.header-content {
+  margin: 0 auto;
+  max-width: 1200px;
+  height: 100%;
+}
+
+.ant-menu {
+  line-height: 2.8rem;
+  background: transparent;
+}
+
+.ant-menu-item {
+  color: #fff;
+  font-size: 0.8rem !important;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.anticon {
+  color: #fff;
+}
