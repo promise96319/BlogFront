@@ -1,6 +1,6 @@
 .header {
   background-color: rgba(3, 3, 3, 0);
-  padding: 0 .8rem;
+  padding: 0 0.8rem;
   overflow: hidden;
   line-height: 3.2rem;
   height: 3.2rem;
@@ -14,20 +14,36 @@
 
 .header-content {
   margin: 0 auto;
-  max-width: 1200px;
+  max-width: 1366px;
+  padding: 0 0.8rem;
   height: 100%;
 }
 
-.ant-menu {
+.header .header-txt {
+  color: #fff;
+}
+
+.header .ant-menu {
   line-height: 2.8rem;
+  border: none;
   background: transparent;
 }
 
-.ant-menu-item {
+.header .ant-menu-item {
   color: #fff;
   font-size: 0.8rem !important;
   padding-left: 1rem;
   padding-right: 1rem;
+}
+
+.header .ant-menu-item:hover {
+  color: #5edfa3;
+  border-color: #5edfa3;
+}
+
+.header .ant-menu-item-selected {
+  color: #5edfa3;
+  border-color: #5edfa3;
 }
 
 .anticon {

@@ -1,0 +1,13 @@
+.article-category {
+  width: 100%;
+}
+
+.article-category .category-name {
+  font-size: 14px;
+  font-weight: 400;
+  color: #333;
+}
+
+.article-category .article-category-content {
+  padding: 1.6rem 0 3rem;
+}

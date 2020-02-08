@@ -4,6 +4,9 @@ import Head from 'next/head'
 import { Carousel } from 'antd'
 
 import Header from '../components/Header'
+import ArticleList from '../components/ArticleList'
+import Footer from '../components/Footer'
+
 import '../static/css/pages/home.css'
 
 const Home = () => {
@@ -15,7 +18,7 @@ const Home = () => {
 
       <Header></Header>
 
-      <Carousel autoplay className="img-container">
+      <Carousel autoplay className="carousel-img-container">
         {[1, 2, 3].map((item, index) => {
           return (
             <div key={index}>
@@ -27,19 +30,11 @@ const Home = () => {
             </div>
           )
         })}
-
-        {/* <div>
-          <img src="../static/image/home2.jpg" alt="" />
-        </div>
-        <div>
-          <img src="../static/image/home3.jpg" alt="" />
-        </div>
-        <div>
-          <img src="../static/image/home2.jpg" alt="" />
-        </div> */}
       </Carousel>
 
-      <div className="content">djdjdj</div>
+      <ArticleList></ArticleList>
+
+      <Footer></Footer>
     </div>
   )
 }
