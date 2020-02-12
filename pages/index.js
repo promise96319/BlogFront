@@ -9,7 +9,13 @@ import Footer from '../components/Footer'
 
 import '../static/css/pages/home.css'
 
-const Home = () => {
+import { getCarouselList } from '../api/carousel'
+
+const Home = (props) => {
+
+  const { carouselList } = props
+  
+  
   return (
     <div>
       <Head>
@@ -19,12 +25,12 @@ const Home = () => {
       <Header></Header>
 
       <Carousel autoplay className="carousel-img-container">
-        {[1, 2, 3].map((item, index) => {
+        {carouselList.map((item, index) => {
           return (
             <div key={index}>
               <style jsx>{`
                 div {
-                  background-image: url(/static/image/home${index+1}.jpg);
+                  background-image: url(${item.image_src});
                 }
               `}</style>
             </div>
@@ -37,6 +43,13 @@ const Home = () => {
       <Footer></Footer>
     </div>
   )
+}
+
+Home.getInitialProps = async (context) => {
+
+  const carouselList = await getCarouselList()
+  
+  return { carouselList }
 }
 
 export default Home

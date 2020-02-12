@@ -6,8 +6,6 @@ import '../static/css/components/articleSideHeader.css'
 
 
 const ArticleSideHeader = (props) => {
-  console.log(props);
-  
   return (
     <div className="article-side-header">
       <span className="aritcle-blank"></span>
