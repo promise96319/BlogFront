@@ -45,7 +45,7 @@ const Home = (props) => {
   )
 }
 
-Home.getInitialProps = async (context) => {
+Home.getInitialProps = async () => {
 
   const carouselList = await getCarouselList()
   
