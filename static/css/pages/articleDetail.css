@@ -82,8 +82,12 @@
   color: #666 ;
   font-size: 1.3rem;
   font-weight: bold;
-  
 }
+
+.article-detail-content li {
+  margin-left: 40px;
+}
+
 .article-detail-content  img{
   border-radius: 5px;
   border:1px solid #f0f0f0;

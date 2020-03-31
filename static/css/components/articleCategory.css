@@ -7,6 +7,14 @@
   font-weight: 400;
   color: #333;
 }
+.article-category .category-name:hover {
+  color: #42b983;
+  cursor: pointer;
+}
+
+.article-category .category-name.selected {
+  color: #42b983;
+}
 
 .article-category .article-category-content {
   padding: 1.6rem 0 3rem;

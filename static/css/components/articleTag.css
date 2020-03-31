@@ -5,3 +5,14 @@
 .article-tag .article-tag-content {
   padding: 1.6rem 0 3rem;
 }
+
+.article-tag .article-tag-content .ant-tag:hover {
+  background-color: #42b983;
+  color: #fff;
+  cursor: pointer;
+}
+
+.article-tag .article-tag-content .selected .ant-tag {
+  background-color: #42b983;
+  color: #fff;
+}

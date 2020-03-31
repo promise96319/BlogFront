@@ -10,6 +10,7 @@
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
   -webkit-transform: translate3d(0, -2px, 0);
   transform: translate3d(0, -2px, 0);
+  cursor: pointer;
 }
 
 .article-card .card-img-container {
@@ -18,7 +19,13 @@
   /* overflow: hidden; */
   background-repeat: no-repeat;
   background-position: center center;
-  background-size: cover;
+  background-size: 100%;
+}
+
+.article-card:hover .card-img-container {
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  background-size: 110%
 }
 
 .card-intro-container {

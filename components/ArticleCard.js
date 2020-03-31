@@ -4,43 +4,56 @@ import { Row, Col, Icon, Tag } from 'antd'
 
 import '../static/css/components/articleCard.css'
 
-const ArticleCard = () => {
+const ArticleCard = props => {
+  const { articleDetail } = props
+  const {
+    title,
+    description,
+    image_src,
+    author_name,
+    category_name,
+    add_time,
+    tags
+  } = articleDetail
+
   return (
     <div className="article-card">
       <div className="card-img-container">
         <style jsx>{`
           .card-img-container {
-            background-image: url(/static/image/home1.jpg);
+            background-image: url(${image_src});
           }
         `}</style>
       </div>
 
       <div className="card-intro-container">
-        <div className="card-title">一门新的语言-pyhton</div>
-        <Row className="card-property" type="flex" justify="start" align="middle" gutter={16}>
+        <div className="card-title">{title}</div>
+        <Row
+          className="card-property"
+          type="flex"
+          justify="start"
+          align="middle"
+          gutter={16}
+        >
           <Col>
             <Icon type="calendar" />
-            2020-01-02
+            {new Date(add_time).toLocaleDateString()}
           </Col>
           <Col>
             <Icon type="folder" />
-            视频教程
+            {category_name}
           </Col>
-          <Col>
-            <Icon type="fire" />
-            2020
-          </Col>
+          <Col>by:{author_name}</Col>
         </Row>
-          <div className="card-intro">
-            这是一门非常好的语言，我非常的喜欢他，你也可以学习，大家一起学多好
-          </div>
+        <div className="card-intro">{description}</div>
 
         <Row className="card-tag" type="flex" justify="start" align="middle">
-          <Col><Tag>css</Tag></Col>
-          <Col><Tag>技术</Tag></Col>
-          <Col><Tag>教程啊</Tag></Col>
-          <Col><Tag>图文</Tag></Col>
-          </Row>
+          {tags.slice(0, 5).map((item, index) => (
+            <Col key={index}>
+              <Tag>{item}</Tag>
+            </Col>
+          ))}
+        </Row>
       </div>
     </div>
   )

@@ -10,16 +10,16 @@ import Footer from '../components/Footer'
 import '../static/css/pages/home.css'
 
 import { getCarouselList } from '../api/carousel'
+import { getArticleList } from '../api/article'
 
 const Home = (props) => {
 
-  const { carouselList } = props
-  
+  const { carouselList, articleList } = props
   
   return (
     <div>
       <Head>
-        <title>博客首页 | 一个渺小的独立开发者</title>
+        <title>博客首页</title>
       </Head>
 
       <Header></Header>
@@ -38,7 +38,7 @@ const Home = (props) => {
         })}
       </Carousel>
 
-      <ArticleList></ArticleList>
+      <ArticleList articleList={articleList}></ArticleList>
 
       <Footer></Footer>
     </div>
@@ -48,8 +48,9 @@ const Home = (props) => {
 Home.getInitialProps = async () => {
 
   const carouselList = await getCarouselList()
+  const articleList = await getArticleList()
   
-  return { carouselList }
+  return { carouselList, articleList }
 }
 
 export default Home
