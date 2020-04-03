@@ -1,0 +1,16 @@
+@import '../common/theme.less';
+
+.article-tag {
+  width: 100%;
+  .article-tag-content {
+    padding: 20px 0 40px;
+    .ant-tag {
+      cursor: pointer;
+      &:hover, &.selected {
+        background-color: @theme_color;
+        color: #fff;
+        border-color: @theme_color;
+      }
+    }
+  }
+}

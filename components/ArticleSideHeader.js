@@ -2,7 +2,7 @@ import React, { createContext, useContext } from 'react'
 
 import { Icon } from 'antd'
 
-import '../static/css/components/articleSideHeader.css'
+import '@css/components/articleSideHeader.less'
 
 
 const ArticleSideHeader = (props) => {

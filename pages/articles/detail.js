@@ -6,14 +6,14 @@ import { Row, Col, Icon, Affix, BackTop } from 'antd'
 import hljs from 'highlight.js'
 import marked from 'marked'
 
-import Header from '../../components/Header'
-import Footer from '../../components/Footer'
-import Tocify from '../../components/tocify.tsx'
-import ArticleSideHeader from '../../components/ArticleSideHeader'
+import Header from '@components/Header'
+import Footer from '@components/Footer'
+import Tocify from '@components/tocify.tsx'
+import ArticleSideHeader from '@components/ArticleSideHeader'
 
-import { getArticleList } from '../../api/article'
+import { getArticleList } from '@api/article'
 
-import '../../static/css/pages/articleDetail.css'
+import '@css/pages/articleDetail.less'
 import 'highlight.js/styles/monokai-sublime.css'
 
 const ArticleDetail = props => {
@@ -29,7 +29,7 @@ const ArticleDetail = props => {
 
   const tocify = new Tocify()
   const renderer = new marked.Renderer()
-  renderer.heading = function(text, level, raw) {
+  renderer.heading = function (text, level, raw) {
     const anchor = tocify.add(text, level)
     return `<a id="${anchor}" href="#${anchor}" class="anchor-fix"><h${level}>${text}</h${level}></a>\n`
   }
@@ -43,7 +43,7 @@ const ArticleDetail = props => {
     breaks: false,
     smartLists: true,
     smartypants: false,
-    highlight: function(code) {
+    highlight: function (code) {
       return hljs.highlightAuto(code).value
     }
   })
@@ -53,21 +53,17 @@ const ArticleDetail = props => {
   return (
     <div className="article-detail">
       <BackTop></BackTop>
-      <Head>
-        <title>文章详情</title>
-      </Head>
 
-      <Header isInDiv={true}></Header>
+      <Header title={title} isInDiv={true}></Header>
 
-      <Row className="article-detail-container" type="flex" justify="center">
-        <Col
-          className="article-detail-content"
-          xs={24}
-          sm={24}
-          md={16}
-          lg={18}
-          xl={18}
-        >
+      <div className="main">
+        <div className="left">
+          <Affix offsetTop={24}>
+            <ArticleSideHeader title={title}></ArticleSideHeader>
+            <div className="toc-list">{tocify && tocify.render()}</div>
+          </Affix>
+        </div>
+        <div className="right">
           <div className="title">{title}</div>
 
           <div className="icons">
@@ -78,7 +74,7 @@ const ArticleDetail = props => {
               <Icon type="folder" /> {category_name}
             </span>
             <span>
-              <Icon type="fire" /> {author_name}
+              <Icon type="edit" /> {author_name}
             </span>
           </div>
 
@@ -86,22 +82,8 @@ const ArticleDetail = props => {
             className="content"
             dangerouslySetInnerHTML={{ __html: html }}
           ></div>
-        </Col>
-
-        <Col
-          className="article-detail-catalog"
-          xs={0}
-          sm={0}
-          md={8}
-          lg={6}
-          xl={6}
-        >
-          <Affix offsetTop={10}>
-            <ArticleSideHeader title="文章目录"></ArticleSideHeader>
-            <div className="toc-list">{tocify && tocify.render()}</div>
-          </Affix>
-        </Col>
-      </Row>
+        </div>
+      </div>
 
       <Footer></Footer>
     </div>

@@ -1,0 +1,141 @@
+@import '../common/theme.less';
+
+.main {
+	display: flex;
+	flex-direction: row;
+	padding: 24px;
+	margin: 0 auto;
+	max-width: 1200px;
+	.left {
+		width: 300px;
+		flex: 0 0 300px;
+		.ant-anchor-wrapper {
+			background-color: transparent;
+      padding: 10px 4px;
+      max-height: none!important;
+		}
+		.ant-anchor-link {
+			color: #606266 !important;
+			padding: 4px !important;
+			margin: 0 !important;
+			height: auto !important;
+			line-height: 24px !important;
+			font-size: 16px !important;
+			width: 100%;
+
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+			a {
+				margin-left: 8px;
+			}
+		}
+
+		.ant-anchor-link-title-active,
+		a:hover {
+			color: @theme_color !important;
+		}
+		.ant-anchor-ink-ball {
+			border-color: @theme_color;
+		}
+
+		.title-level3 {
+			display: none !important;
+		}
+	}
+
+	.right {
+		flex: 1;
+		background-color: #fff;
+		border-radius: 6px;
+		padding: 24px 24px;
+		.anticon {
+			color: #303133;
+		}
+		.title {
+			font-size: 28px;
+			text-align: center;
+			padding: 30px;
+		}
+		.icons {
+			text-align: center;
+			span {
+				margin: 0px 10px;
+			}
+		}
+
+		.content {
+			font-size: 16px;
+			color: #303133;
+			font-weight: 400;
+			line-height: 20px;
+			padding-top: 24px;
+		}
+	}
+}
+
+h2 {
+	border-bottom: 1px solid #c0c4cc;
+  margin-top: 30px;
+  padding: 20px 0 12px;
+	-webkit-margin-bottom-collapse: 2rem;
+	color: #303133;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+h3 {
+	border-left: 4px solid @theme_color;
+	padding-left: 8px;
+	margin-bottom: 12px;
+	margin-top: 24px;
+	-webkit-margin-bottom-collapse: 2rem;
+	color: #606266;
+	font-size: 18px;
+	font-weight: bold;
+}
+
+li {
+	margin-left: 36px;
+  line-height: 24px;
+  margin-bottom: 8px;
+	p {
+		margin-bottom: 4px !important;
+	}
+}
+
+img {
+	border-radius: 6px;
+	border: 1px solid #f0f0f0;
+}
+
+pre {
+	display: block;
+	background-color: #283646 !important;
+	padding: 12px !important;
+	overflow-y: auto;
+	font-weight: 400;
+	font-family: Menlo, monospace;
+	border-radius: 6px;
+}
+
+pre > code {
+	border: 0px !important;
+	background-color: #283646 !important;
+	color: #c0c4cc !important;
+	font-size: 14px;
+	letter-spacing: 0.4px !important;
+}
+
+code {
+	display: inline-block;
+	background-color: #fff5f5;
+	border-radius: 3px;
+	padding-left: 5px;
+	padding-right: 5px;
+	color: #ff502c;
+	margin: 0px 3px;
+	line-height: 20px;
+	font-size: 14px;
+	letter-spacing: 0px;
+}

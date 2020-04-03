@@ -2,7 +2,7 @@ import React from 'react'
 
 import { Row, Col, Icon, Tag } from 'antd'
 
-import '../static/css/components/articleCard.css'
+import '@css/components/articleCard.less'
 
 const ArticleCard = props => {
   const { articleDetail } = props
@@ -43,7 +43,10 @@ const ArticleCard = props => {
             <Icon type="folder" />
             {category_name}
           </Col>
-          <Col>by:{author_name}</Col>
+          <Col>
+            <Icon type="edit"></Icon>
+            {author_name}
+          </Col>
         </Row>
         <div className="card-intro">{description}</div>
 

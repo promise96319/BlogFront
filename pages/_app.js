@@ -1,6 +1,7 @@
 import App from 'next/app'
 
 import 'antd/dist/antd.css'
-import '../static/css/common/common.css'
+import '@css/common/common.less'
+import '../static/css/common/theme.less'
 
 export default App

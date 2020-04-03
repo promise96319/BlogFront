@@ -1,0 +1,51 @@
+@import '../common/theme.less';
+
+.header {
+  background-color: transparent;
+  overflow: hidden;
+  line-height: 64px;
+  height: 64px;
+  color: #fff;
+  &.scrolled {
+    background-color: #fff;
+    color: @theme_font_black;
+  }
+  .header-content {
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 0 24px;
+    margin: 0 auto;
+    height: 100%;
+
+    .header-title {
+      font-size: 24px;
+      font-weight: 200;
+      cursor: pointer;
+    }
+
+    .menu-item {
+      font-size: 14px;
+      width: 64px;
+      height: 100%;
+      cursor: pointer;
+      text-align: center;
+      &:hover {
+        color: @theme_color;
+      }
+      &.selected {
+        color: @theme_color;
+      }
+    }
+  }
+}
+
+.header-content {
+  width: 1200px;
+  max-width: 1200px;
+}
+
+@media screen and (max-width: 1200px) {
+  .header-content {
+    width: 100%;
+  }
+}

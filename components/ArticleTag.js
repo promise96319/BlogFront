@@ -5,9 +5,9 @@ import ArticleSideHeader from './ArticleSideHeader'
 
 import { Row, Col, Tag } from 'antd'
 
-import '../static/css/components/articleTag.css'
+import '@css/components/articleTag.less'
 
-import { getTagList } from '../api/tag'
+import { getTagList } from '@api/tag'
 
 const ArticleTag = () => {
   const [tagList, setTagList] = useState([])
@@ -23,7 +23,9 @@ const ArticleTag = () => {
 
   return (
     <div className="article-tag">
+
       <ArticleSideHeader title="文章标签"></ArticleSideHeader>
+
       <div className="article-tag-content">
         <Row type="flex" justify="start" align="top" gutter={[4, 12]}>
           {tagList.map((item, index) => {

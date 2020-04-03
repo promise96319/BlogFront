@@ -1,23 +1,19 @@
 import React from 'react'
 import Head from 'next/head'
 
-import Header from '../../components/Header'
-import ArticleList from '../../components/ArticleList'
-import Footer from '../../components/Footer'
+import Header from '@components/Header'
+import ArticleList from '@components/ArticleList'
+import Footer from '@components/Footer'
 
-import '../../static/css/pages/articleList.css'
-import { getArticleList } from '../../api/article'
+import '@css/pages/articleList.less'
+import { getArticleList } from '@api/article'
 
 const ArticleListPage = props => {
   const { articleList } = props
 
   return (
     <div className="article-list">
-      <Head>
-        <title>文章列表</title>
-      </Head>
-
-      <Header isFixed={true}></Header>
+      <Header isFixed={true} title="文章列表"></Header>
 
       <ArticleList articleList={articleList}></ArticleList>
 

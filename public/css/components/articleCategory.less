@@ -1,0 +1,16 @@
+@import '../common/theme.less';
+
+.article-category {
+  width: 100%;
+  .category-name {
+    font-size: 14px;
+    color: #303133;
+    cursor: pointer;
+    &:hover, &.selected {
+      color: @theme_color;
+    }
+  }
+  .article-category-content {
+    padding: 20px 0 40px;
+  }
+}

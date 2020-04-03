@@ -1,35 +1,30 @@
 import React from 'react'
-import Head from 'next/head'
-
 import { Carousel } from 'antd'
 
-import Header from '../components/Header'
-import ArticleList from '../components/ArticleList'
-import Footer from '../components/Footer'
+import Header from '@components/Header'
+import ArticleList from '@components/ArticleList'
+import Footer from '@components/Footer'
 
-import '../static/css/pages/home.css'
+import '@css/pages/home.less'
 
-import { getCarouselList } from '../api/carousel'
-import { getArticleList } from '../api/article'
+import { getCarouselList } from '@api/carousel'
+import { getArticleList } from '@api/article'
 
 const Home = (props) => {
-
+  console.log(props);
+  
   const { carouselList, articleList } = props
   
   return (
     <div>
-      <Head>
-        <title>博客首页</title>
-      </Head>
-
-      <Header></Header>
+      <Header title="博客首页"></Header>
 
       <Carousel autoplay className="carousel-img-container">
         {carouselList.map((item, index) => {
           return (
-            <div key={index}>
+            <div className="bg-image" key={index}>
               <style jsx>{`
-                div {
+                .bg-image {
                   background-image: url(${item.image_src});
                 }
               `}</style>
@@ -46,7 +41,6 @@ const Home = (props) => {
 }
 
 Home.getInitialProps = async () => {
-
   const carouselList = await getCarouselList()
   const articleList = await getArticleList()
   

@@ -7,7 +7,7 @@ import ArticleCard from './ArticleCard'
 import ArticleCategory from './ArticleCategory'
 import ArticleTag from './ArticleTag'
 
-import '../static/css/components/articleList.css'
+import '@css/components/articleList.less'
 
 const ArticleList = props => {
   const { articleList } = props
@@ -15,15 +15,15 @@ const ArticleList = props => {
   return (
     <main className="main-content">
       <Row type="flex" justify="space-between" gutter={0}>
-        <Col className="content-left" xs={24} sm={24} md={16} lg={18} xl={18}>
-          <Row type="flex" justify="start" align="top" gutter={[28, 28]}>
+        <Col className="content-left" xs={24} sm={24} md={18} lg={18} xl={18}>
+          <Row type="flex" justify="start" align="top" gutter={[24, 24]}>
             {articleList.map((item, index) => {
               return (
                 <Col
                   xs={24}
                   sm={12}
-                  md={12}
-                  lg={12}
+                  md={8}
+                  lg={8}
                   xl={8}
                   key={index}
                   onClick={() => {
@@ -39,7 +39,7 @@ const ArticleList = props => {
             })}
           </Row>
         </Col>
-        <Col className="content-right" xs={0} sm={0} md={7} lg={5} xl={5}>
+        <Col className="content-right" xs={0} sm={0} md={6} lg={6} xl={6}>
           <ArticleCategory></ArticleCategory>
           <ArticleTag></ArticleTag>
         </Col>

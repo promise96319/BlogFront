@@ -50,8 +50,8 @@ const errorHandler = error => {
  * 配置request请求时的默认参数
  */
 
-// const HOST = "http://localhost:7001"
-const HOST = 'http://www.qinguanghui.com'
+const HOST = "http://localhost:7001"
+// const HOST = 'http://www.qinguanghui.com'
 
 const request = async (params) => {
   const { url } = params
@@ -67,6 +67,8 @@ const request = async (params) => {
       resolve(res.data)
     })
     .catch((err) => {
+      console.log(err)
+      
       reject(errorHandler(err))
     })
   })
