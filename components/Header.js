@@ -49,13 +49,15 @@ const Header = props => {
 							Router.push('/')
 						}}
 					>
-						Silence
+						<img src={ isScrolled || isFixed ? "/image/logo_dark.png" : "/image/logo.png" } alt=""/>
 					</div>
 				</Col>
 				<Col>
 					<Row type='flex' justify='end' align='middle'>
 						<Col>
-							<div className="menu-item" onClick={() => { }}>
+							<div 
+								className="menu-item" 
+								onClick={() => { Router.push('/') }}>
 								首页
 							</div>
 						</Col>
@@ -82,7 +84,7 @@ const Header = props => {
 					<meta name="keywords" content={keywords}></meta>
 					<meta name="viewport" content="initial-scale=1.0, width=device-width, maximum-scale=1.0, user-scalable=0;" key="viewport" />
 				</Head>
-				<div className='header scrolled'>{commonHeader}</div>
+				<div className='header'>{commonHeader}</div>
 			</div>
 		)
 	}

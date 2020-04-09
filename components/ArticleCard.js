@@ -1,5 +1,6 @@
 import React from 'react'
 
+import Router from 'next/router'
 import { Row, Col, Icon, Tag } from 'antd'
 
 import '@css/components/articleCard.less'
@@ -54,6 +55,14 @@ const ArticleCard = props => {
           {tags.slice(0, 5).map((item, index) => (
             <Col key={index}>
               <Tag>{item}</Tag>
+              {/* onClick={(event) => {           
+              Router.push({
+                pathname: '/articles/list',
+                query: { tagID: item.id }
+              })
+              event.cancelBubble = true
+              event.stopPropagation()
+              }} */}
             </Col>
           ))}
         </Row>

@@ -9,6 +9,7 @@
   &.scrolled {
     background-color: #fff;
     color: @theme_font_black;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   }
   .header-content {
     box-sizing: border-box;
@@ -18,8 +19,11 @@
     height: 100%;
 
     .header-title {
-      font-size: 24px;
-      font-weight: 200;
+      img {
+        height: 24px;
+        width: auto;
+        border: none;
+      }
       cursor: pointer;
     }
 

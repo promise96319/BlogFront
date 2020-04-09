@@ -52,40 +52,57 @@ const ArticleDetail = props => {
 
   return (
     <div className="article-detail">
+
+      <div className="detial-img "></div>
+      <style jsx>{`
+                  .detial-img  {
+                    height: 100%;
+                    background-size: cover;
+                    background-image: url(https://app.dairy.qinguanghui.com/22_landscape-2990060_1920.jpg );
+                  }
+                `}</style>
+{/* https://app.dairy.qinguanghui.com/22_landscape-2990060_1920.jpg 
+https://app.dairy.qinguanghui.com/8_sean-o-KMn4VEeEPR8-unsplash.jpg*/}
       <BackTop></BackTop>
 
       <Header title={title} isInDiv={true}></Header>
 
       <div className="main">
         <div className="left">
+          <div className="background"></div>
           <Affix offsetTop={24}>
-            <ArticleSideHeader title={title}></ArticleSideHeader>
+
+            {/* <ArticleSideHeader title={title}></ArticleSideHeader> */}
             <div className="toc-list">{tocify && tocify.render()}</div>
           </Affix>
         </div>
         <div className="right">
+          <div className="background"></div>
+
+          <div>
           <div className="title">{title}</div>
 
-          <div className="icons">
-            <span>
-              <Icon type="calendar" /> {new Date(add_time).toLocaleDateString()}
-            </span>
-            <span>
-              <Icon type="folder" /> {category_name}
-            </span>
-            <span>
-              <Icon type="edit" /> {author_name}
-            </span>
-          </div>
+            <div className="icons">
+              <span>
+                <Icon type="calendar" /> {new Date(add_time).toLocaleDateString()}
+              </span>
+              <span>
+                <Icon type="folder" /> {category_name}
+              </span>
+              <span>
+                <Icon type="edit" /> {author_name}
+              </span>
+            </div>
 
-          <div
-            className="content"
-            dangerouslySetInnerHTML={{ __html: html }}
-          ></div>
+            <div
+              className="content"
+              dangerouslySetInnerHTML={{ __html: html }}
+            ></div>
+          </div>
         </div>
       </div>
 
-      <Footer></Footer>
+      <Footer isLight={true}></Footer>
     </div>
   )
 }
